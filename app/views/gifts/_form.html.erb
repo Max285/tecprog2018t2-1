@@ -1,0 +1,32 @@
+<%= form_with(model: gift, local: true) do |form| %>
+  <% if gift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gift.errors.count, "error") %> prohibited this gift from being saved:</h2>
+
+      <ul>
+      <% gift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :gift_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Date_to_send %>
+    <%= form.text_field :Date_to_send, id: :gift_Date_to_send %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Image_url %>
+    <%= form.text_field :Image_url, id: :gift_Image_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
