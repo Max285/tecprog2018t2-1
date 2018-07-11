@@ -25,7 +25,7 @@ class GiftsController < ApplicationController
   # POST /gifts.json
   def create
     @gift = Gift.new(gift_params)
-
+    byebug
     respond_to do |format|
       if @gift.save
         format.html { redirect_to @gift, notice: 'Gift was successfully created.' }
@@ -69,6 +69,6 @@ class GiftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_params
-      params.require(:gift).permit(:name, :Date_to_send, :Image_url)
+      params.require(:gift).permit(:user_id, :name, :Date_to_send, :Image_url)
     end
 end
