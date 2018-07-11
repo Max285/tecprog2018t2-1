@@ -4,7 +4,7 @@ class CreateRecipients < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :relationship
       t.string :address
-      t.int :age
+      t.integer :age
 
       t.timestamps
     end
